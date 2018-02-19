@@ -5,7 +5,7 @@
     <f7-block v-if="loaded" ref="recipeView" id="recipeView">
       <div class="text-align-center">
         <img style="width: 100%"
-          :src="`https://lk.beauty-matrix.ru/gallery/images/image-by-item-and-alias?item=${model.images[0].modelName}${model.images[0].itemId}&dirtyAlias=${model.images[0].urlAlias}.jpg`"/>
+          :src="`https://lk.beauty-matrix.ru/gallery/images/image-by-item-and-alias?item=${model.images[0].modelName}${model.images[0].itemId}&dirtyAlias=${model.images[0].urlAlias}_${blockWidth}x.jpg`"/>
       </div>
       <br>
       <span v-html="model.description"></span>
@@ -15,7 +15,7 @@
 <script>
   import F7BlockTitle from "../../../node_modules/framework7-vue/src/components/block-title.vue";
   import F7Block from "../../../node_modules/framework7-vue/src/components/block.vue";
-  import Dom7 from '../../../node_modules/dom7/dist/dom7.js'
+  import Dom7 from '../../../node_modules/dom7/dist/dom7.module'
 
   export default {
     components: {
@@ -39,9 +39,11 @@
       }, response => {
       })
     },
-    mounted() {
+    mounted () {
       var $$ = Dom7;
       this.blockWidth = $$('div#recipeView').width()
+      console.log(this.blockWidth)
+      this.blockWidth = Math.round(this.blockWidth)
       console.log(this.blockWidth)
     }
   }
