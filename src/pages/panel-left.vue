@@ -11,7 +11,8 @@
       <f7-list-item link="/message/" title="Сообщения" view="#main-view" panel-close></f7-list-item>
       <f7-list-item link="/motivation/" title="Мотивация" view="#main-view" panel-close></f7-list-item>
       <f7-list-item link="/recipe/" title="Рецепты" view="#main-view" panel-close></f7-list-item>
-      <li class="item-divider">Divider title here</li>
+      <li class="item-divider"></li>
+      <f7-list-item link="/profile/" title="Профиль" view="#main-view" panel-close></f7-list-item>
       <f7-list-item link="/logout/" title="Выйти" panel-close></f7-list-item>
     </f7-list>
   </f7-page>

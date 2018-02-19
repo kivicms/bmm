@@ -11,8 +11,10 @@ import Progress from './modules/progress/progress.vue'
 import Question from './modules/question/question.vue'
 import Ration from './modules/ration/ration.vue'
 import Recipe from './modules/recipe/recipe.vue'
+import RecipeView from './modules/recipe/recipe-view.vue'
 import SpecialOffer from './modules/specialoffer/specialoffer.vue'
 import Training from './modules/training/training.vue'
+import Profile from './modules/profile/profile.vue'
 
 import PanelLeftPage from './pages/panel-left.vue';
 import PanelRightPage from './pages/panel-right.vue';
@@ -51,12 +53,20 @@ export default [
     component: Recipe
   },
   {
+    path: '/recipe-view/:id',
+    component: RecipeView
+  },
+  {
     path: '/specialoffer/',
     component: SpecialOffer
   },
   {
     path: '/training/',
     component: Training
+  },
+  {
+    path: '/profile/',
+    component: Profile
   },
   {
     path: '/panel-left/',

@@ -1,3 +1,4 @@
+
 // Import Vue
 import Vue from 'vue';
 
@@ -14,6 +15,8 @@ import Framework7Styles from 'framework7/dist/css/framework7.css';
 import IconsStyles from './css/icons.css';
 import AppStyles from './css/app.css';
 
+import VueResource from 'vue-resource'
+
 // Import Routes
 import Routes from './routes.js'
 
@@ -22,6 +25,7 @@ import App from './app';
 
 // Init F7 Vue Plugin
 Vue.use(Framework7Vue, Framework7)
+Vue.use(VueResource)
 
 // Init App
 new Vue({

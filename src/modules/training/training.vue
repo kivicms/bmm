@@ -37,7 +37,9 @@
       for (let i = 1; i < 10; i++) {
         this.buttons.push({title: i + '-я неделя', active: i === this.activeButton})
       }
-      console.log('on created')
+      this.$http.get('http://localhost:8082/catalog/trainings').then(response => {
+        this.items = response.body
+      }, response => {})
     }
   }
 </script>
