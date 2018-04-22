@@ -5,9 +5,9 @@
         <f7-link icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="left"></f7-link>
       </f7-nav-left>
       <f7-nav-title>Beauty Matrix</f7-nav-title>
-      <f7-nav-right>
+<!--      <f7-nav-right>
         <f7-link icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="right"></f7-link>
-      </f7-nav-right>
+      </f7-nav-right>-->
     </f7-navbar>
     <div class="views tabs ios-edges">
       <!-- Tabbar for switching views-tabs -->
@@ -15,40 +15,74 @@
         <div class="toolbar-inner">
           <a href="#view-home" class="tab-link tab-link-active">
             <i class="icon f7-icons ios-only">home</i>
-            <i class="icon f7-icons ios-only icon-ios-fill">home_fill</i>
+<!--            <i class="icon f7-icons ios-only icon-ios-fill">home_fill</i>-->
             <i class="icon material-icons md-only">home</i>
-            <span class="tabbar-label">Home</span>
+            <span class="tabbar-label">Главная</span>
           </a>
-          <a href="#view-catalog" class="tab-link">
+          <a href="#view-train" class="tab-link">
+            <i class="icon f7-icons ios-only">film</i>
+<!--            <i class="icon f7-icons ios-only icon-ios-fill">film_fill</i>-->
+            <i class="icon material-icons md-only">film</i>
+            <span class="tabbar-label">Тренировки</span>
+          </a>
+          <a href="#view-progress" class="tab-link">
+            <i class="icon f7-icons ios-only">data</i>
+            <!--            <i class="icon f7-icons ios-only icon-ios-fill">data_fill</i>-->
+            <i class="icon material-icons md-only">data</i>
+            <span class="tabbar-label">Прогресс</span>
+          </a>
+          <a href="#view-ration" class="tab-link">
             <i class="icon f7-icons ios-only">list</i>
-            <i class="icon f7-icons ios-only icon-ios-fill">list_fill</i>
+<!--            <i class="icon f7-icons ios-only icon-ios-fill">list_fill</i>-->
             <i class="icon material-icons md-only">view_list</i>
-            <span class="tabbar-label">Catalog</span>
+            <span class="tabbar-label">Рацион</span>
           </a>
-          <a href="#view-settings" class="tab-link">
-            <i class="icon f7-icons ios-only">settings</i>
-            <i class="icon f7-icons ios-only icon-ios-fill">settings_fill</i>
-            <i class="icon material-icons md-only">settings</i>
-            <span class="tabbar-label">Settings</span>
+          <a href="#view-other" class="tab-link">
+            <i class="icon f7-icons ios-only">more_vertical</i>
+<!--            <i class="icon f7-icons ios-only icon-ios-fill">settings_fill</i>-->
+            <i class="icon material-icons md-only">more_vertical</i>
+            <span class="tabbar-label">Прочее</span>
           </a>
         </div>
       </div>
-      <div id="view-home" class="view view-main tab tab-active">
+      <div id="view-home" class="view view-main tab tab-active pasge-content" style="padding-top: 24px;">
         <!-- Page, data-name contains page name which can be used in page callbacks -->
         <div class="page" data-name="home">
           Домашняя страница
         </div>
       </div>
-      <div id="view-catalog" class="view tab">
+      <div id="view-train" class="view tab page-content" style="padding-top: 24px;">
         <!-- Catalog page will be loaded here dynamically from /catalog/ route -->
-        Каталог
+        Тренировки
       </div>
 
-      <!-- Settings View -->
-      <div id="view-settings" class="view tab">
-        <!-- Settings page will be loaded here dynamically from /settings/ route -->
+      <div id="view-progress" class="view tab page-content">
+        <!-- Catalog page will be loaded here dynamically from /catalog/ route -->
+        <user-progress></user-progress>
+      </div>
 
-        НАстройки
+      <div id="view-ration" class="view tab page-content" style="padding-top: 24px;">
+        <!-- Catalog page will be loaded here dynamically from /catalog/ route -->
+        <ration></ration>
+      </div>
+
+      <!-- Other View -->
+      <div id="view-other" class="view tab page-content"  style="padding-top: 24px;">
+        <div class="list links-list">
+          <ul>
+            <li><a href="/specialoffer/">Спец. предложения</a></li>
+            <li><a href="/payment/">Платежи</a></li>
+            <li><a href="/question/">Вопросы</a></li>
+            <li><a href="/message/">Сообщения</a></li>
+            <li><a href="/motivation/">Мотивация</a></li>
+            <li><a href="/recipe/">Рецепты</a></li>
+            <li><a href="/faq-food/">FAQ питание</a></li>
+            <li><a href="/faq-train/">FAQ тренировки</a></li>
+            <li><a href="/profile/">Мой профиль</a></li>
+            <li class="item-divider"></li>
+            <li><a href="#">Выйти</a></li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -89,5 +123,9 @@
   </f7-page>
 </template>
 <script>
-  export default {}
+  import Ration from "../modules/ration/ration.vue";
+  import UserProgress from "../modules/progress/progress.vue"
+  export default {components: {
+    UserProgress,
+    Ration}}
 </script>

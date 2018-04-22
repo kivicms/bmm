@@ -4,10 +4,13 @@
     </f7-navbar>
     <div class="card">
       <div class="card-header">
-        Рецепты
-        <f7-input type="select">
+        Рецепты!!!
+        <div class="item-input-wrap">
+<!--        <select>
           <option v-for="c in categories">{{ c.title }}</option>
-        </f7-input>
+        </select>-->
+        <f7-input></f7-input>
+        </div>
       </div>
       <div class="card-content card-content-padding">
         <div class="list media-list">
@@ -15,8 +18,10 @@
             <li v-for="i in items">
               <a :href="`/recipe-view/${i.id}`" class="item-link item-content">
                 <div class="item-media">
-                  <!--<img :src="`https://lk.beauty-matrix.ru/uploads/gallery/images/store/${i.images[0].filePath}`" width="44"/> -->
-                  <img :src="`https://lk.beauty-matrix.ru/gallery/images/image-by-item-and-alias?item=${i.images[0].modelName}${i.images[0].itemId}&dirtyAlias=${i.images[0].urlAlias}_70x70.jpg`" />
+                  <img :src="`https://lk.beauty-matrix.ru/uploads/gallery/images/store/${i.images[0].filePath}`" width="80"/>
+
+                  <!--<img width="80" :src="`https://lk.beauty-matrix.ru/gallery/images/image-by-item-and-alias?item=${i.images[0].modelName}${i.images[0].itemId}&dirtyAlias=${i.images[0].urlAlias}.jpg`" />-->
+
                 </div>
                 <div class="item-inner">
                   <div class="item-title-row">
@@ -34,8 +39,10 @@
 </template>
 <script>
 
+  import F7Input from "../../../node_modules/framework7-vue/src/components/input.vue";
+
   export default {
-    components: {},
+    components: {F7Input},
     name: 'recipe',
     data: function () {
       return {
