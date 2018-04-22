@@ -1,10 +1,10 @@
 <template>
   <f7-page>
-    <f7-navbar title="Рацион" back-link="Back"></f7-navbar>
-    <f7-block-title>{{ model.title }}</f7-block-title>
-    <f7-block>
-      <span v-html="model.description"></span>
-    </f7-block>
+    <f7-navbar title="Рацион" back-link="Назад"></f7-navbar>
+    <div class="card">
+      <div class="card-header">Мой рацион</div>
+      <div class="card-content card-content-padding"><span v-html="model.ration_content"></span></div>
+    </div>
   </f7-page>
 </template>
 <script>
@@ -22,7 +22,7 @@
       }
     },
     created () {
-        this.$http.get('http://localhost:8082/catalog/rations/1').then(response => {
+        this.$http.get('profiles/9').then(response => {
           this.model = response.body
         }, response => {})
     }

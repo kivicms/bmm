@@ -1,15 +1,17 @@
 <template>
   <f7-page>
     <f7-navbar title="Рецепты" back-link="Назад"></f7-navbar>
-    <f7-block-title>{{ model.title }}</f7-block-title>
-    <f7-block v-if="loaded" ref="recipeView" id="recipeView">
-      <div class="text-align-center">
-        <img style="width: 100%"
-          :src="`https://lk.beauty-matrix.ru/gallery/images/image-by-item-and-alias?item=${model.images[0].modelName}${model.images[0].itemId}&dirtyAlias=${model.images[0].urlAlias}_${blockWidth}x.jpg`"/>
+
+    <div class="card">
+      <div class="card-header">{{ model.title }}</div>
+      <div class="card-content card-content-padding"  v-if="loaded" ref="recipeView" id="recipeView">
+        <div class="text-align-center">
+          <img style="width: 100%"
+               :src="`https://lk.beauty-matrix.ru/gallery/images/image-by-item-and-alias?item=${model.images[0].modelName}${model.images[0].itemId}&dirtyAlias=${model.images[0].urlAlias}.jpg`"/>
+        </div>
+        <span v-html="model.description"></span>
       </div>
-      <br>
-      <span v-html="model.description"></span>
-    </f7-block>
+    </div>
   </f7-page>
 </template>
 <script>
@@ -33,7 +35,7 @@
       }
     },
     created() {
-      this.$http.get('http://localhost:8082/catalog/recipes/' + this.$f7route.params['id'] + '?expand=category,images').then(response => {
+      this.$http.get('recipes/' + this.$f7route.params['id'] + '?expand=category,images').then(response => {
         this.model = response.body
         this.loaded = true
       }, response => {

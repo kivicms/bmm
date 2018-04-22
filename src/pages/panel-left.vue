@@ -11,7 +11,10 @@
       <f7-list-item link="/message/" title="Сообщения" view="#main-view" panel-close></f7-list-item>
       <f7-list-item link="/motivation/" title="Мотивация" view="#main-view" panel-close></f7-list-item>
       <f7-list-item link="/recipe/" title="Рецепты" view="#main-view" panel-close></f7-list-item>
+      <f7-list-item link="/faq-food/" title="FAQ питание" view="#main-view" panel-close></f7-list-item>
+      <f7-list-item link="/faq-train/" title="FAQ тренировки" view="#main-view" panel-close></f7-list-item>
       <li class="item-divider"></li>
+      <f7-list-item link="/login/" title="Логин" view="#main-view" panel-close></f7-list-item>
       <f7-list-item link="/profile/" title="Профиль" view="#main-view" panel-close></f7-list-item>
       <f7-list-item link="/logout/" title="Выйти" panel-close></f7-list-item>
     </f7-list>

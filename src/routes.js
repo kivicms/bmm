@@ -5,6 +5,8 @@ import DynamicRoutePage from './pages/dynamic-route.vue';
 import NotFoundPage from './pages/not-found.vue';
 
 import Message from './modules/message/message.vue'
+import FaqFood from './modules/faq/faq-food.vue'
+import FaqTrain from './modules/faq/faq-train.vue'
 import Motivation from './modules/motivation/motivation.vue'
 import Payment from './modules/payment/payment.vue'
 import Progress from './modules/progress/progress.vue'
@@ -19,14 +21,28 @@ import Profile from './modules/profile/profile.vue'
 import PanelLeftPage from './pages/panel-left.vue';
 import PanelRightPage from './pages/panel-right.vue';
 
+import Login from './pages/login.vue'
+
 export default [
   {
     path: '/',
     component: HomePage,
   },
   {
+    path: '/login/',
+    component: Login
+  },
+  {
     path: '/message/',
     component: Message
+  },
+  {
+    path: '/faq-food',
+    component: FaqFood
+  },
+  {
+    path: '/faq-train',
+    component: FaqTrain
   },
   {
     path: '/motivation/',

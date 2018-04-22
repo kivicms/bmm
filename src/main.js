@@ -19,13 +19,23 @@ import VueResource from 'vue-resource'
 
 // Import Routes
 import Routes from './routes.js'
+import auth from './auth/index.js'
+
 
 // Import App Component
-import App from './app';
+import App from './app'
 
 // Init F7 Vue Plugin
 Vue.use(Framework7Vue, Framework7)
 Vue.use(VueResource)
+
+// const router = Framework7.Router
+// console.log(router)
+
+Vue.http.headers.common['Authorization'] = auth.getBearer()
+
+Vue.http.options.root = 'http://beauty-matrix.ru/admin/api_v1/'
+
 
 // Init App
 new Vue({
@@ -34,10 +44,22 @@ new Vue({
   // Init Framework7 by passing parameters here
   framework7: {
     id: 'io.framework7.testapp', // App bundle ID
-    name: 'Framework7', // App name
+    name: 'Beauty-Matrix.ru', // App name
     theme: 'auto', // Automatic theme detection
     // App routes
     routes: Routes,
+  },
+  methods: {
+    onF7RouteChange(newRoute, previousRoute, router) {
+      if (!auth.checkAuth() && newRoute.url !== '/login/') {
+        // console.log('not auth')
+        // router.navigate('/login/')
+        // var loginScreen = this.app.loginScreen.create({ /* parameters */ })
+        // loginScreen.open()
+      }
+      // console.log('newRoute')
+      // console.log(newRoute)
+    }
   },
   // Register App Component
   components: {
