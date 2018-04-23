@@ -13,47 +13,45 @@
       <!-- Tabbar for switching views-tabs -->
       <div class="toolbar tabbar-labels toolbar-bottom-md">
         <div class="toolbar-inner">
+
           <a href="#view-home" class="tab-link tab-link-active">
             <i class="icon f7-icons ios-only">home</i>
-<!--            <i class="icon f7-icons ios-only icon-ios-fill">home_fill</i>-->
             <i class="icon material-icons md-only">home</i>
             <span class="tabbar-label">Главная</span>
           </a>
+
           <a href="#view-train" class="tab-link">
             <i class="icon f7-icons ios-only">film</i>
-<!--            <i class="icon f7-icons ios-only icon-ios-fill">film_fill</i>-->
             <i class="icon material-icons md-only">film</i>
             <span class="tabbar-label">Тренировки</span>
           </a>
+
           <a href="#view-progress" class="tab-link">
             <i class="icon f7-icons ios-only">data</i>
-            <!--            <i class="icon f7-icons ios-only icon-ios-fill">data_fill</i>-->
             <i class="icon material-icons md-only">data</i>
             <span class="tabbar-label">Прогресс</span>
           </a>
+
           <a href="#view-ration" class="tab-link">
             <i class="icon f7-icons ios-only">list</i>
-<!--            <i class="icon f7-icons ios-only icon-ios-fill">list_fill</i>-->
             <i class="icon material-icons md-only">view_list</i>
             <span class="tabbar-label">Рацион</span>
           </a>
+
           <a href="#view-other" class="tab-link">
             <i class="icon f7-icons ios-only">more_vertical</i>
-<!--            <i class="icon f7-icons ios-only icon-ios-fill">settings_fill</i>-->
             <i class="icon material-icons md-only">more_vertical</i>
             <span class="tabbar-label">Прочее</span>
           </a>
         </div>
       </div>
+
       <div id="view-home" class="view view-main tab tab-active pasge-content" style="padding-top: 24px;">
         <!-- Page, data-name contains page name which can be used in page callbacks -->
-        <div class="page" data-name="home">
-          Домашняя страница
-        </div>
+
       </div>
       <div id="view-train" class="view tab page-content" style="padding-top: 24px;">
-        <!-- Catalog page will be loaded here dynamically from /catalog/ route -->
-        Тренировки
+        <training></training>
       </div>
 
       <div id="view-progress" class="view tab page-content">
@@ -125,7 +123,9 @@
 <script>
   import Ration from "../modules/ration/ration.vue";
   import UserProgress from "../modules/progress/progress.vue"
+  import Training from "../modules/training/training.vue";
   export default {components: {
+    Training,
     UserProgress,
     Ration}}
 </script>

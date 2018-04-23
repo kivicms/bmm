@@ -1,27 +1,14 @@
 <template>
-  <f7-page>
-    <f7-navbar title="Тренировки" back-link="Back"></f7-navbar>
-    <f7-block-title>Недели</f7-block-title>
-    <f7-block>
-      <f7-row>
-        <template v-for="b in buttons">
-          <f7-button fill>{{ b.title }} </f7-button>
-        </template>
-      </f7-row>
-    </f7-block>
-    <f7-block-title>Дни</f7-block-title>
-    <div class="block">
-      <div class="row">
-        <a class="button">1 день</a>
-        <a class="button">2 день</a>
-        <a class="button">3 день</a>
-        <a class="button">4 день</a>
-        <a class="button">5 день</a>
-        <a class="button">6 день</a>
-        <a class="button">7 день</a>
-      </div>
+  <div>
+    <div v-show="showSelectedWeek">{{ selectedWeek }}</div>
+    <div class="list links-list" v-show="showWeeks">
+      <ul>
+        <li v-for="w in weeks">
+          <a href="#" v-on:click="weekChanged(w.id, w.title)" class="list-button item-link">{{ w.title }} </a>
+        </li>
+      </ul>
     </div>
-  </f7-page>
+  </div>
 </template>
 <script>
   export default {
@@ -29,17 +16,34 @@
     data: function () {
       return {
         items: [],
-        buttons: [],
-        activeButton: 1
+        weeks: [],
+        activeWeek: 1,
+        showWeeks: true,
+        showSelectedWeek: false,
+        selectedWeek: ''
       }
+    },
+    mounted() {
+      this.showWeeks = true
+      this.showSelectedWeek = false
+      this.selectedWeek = ''
     },
     created() {
       for (let i = 1; i < 10; i++) {
-        this.buttons.push({title: i + '-я неделя', active: i === this.activeButton})
+        this.weeks.push({id: i, title: i + '-я неделя', active: i === this.activeWeek})
       }
       this.$http.get('http://localhost:8082/catalog/trainings').then(response => {
         this.items = response.body
       }, response => {})
+    },
+    methods: {
+      weekChanged: function(week, title) {
+        this.activeWeek = week
+        this.showWeeks = false
+        this.showSelectedWeek = true
+        this.selectedWeek = title
+        console.log(week)
+      }
     }
   }
 </script>
