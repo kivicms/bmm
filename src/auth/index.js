@@ -1,7 +1,7 @@
 // import router from '../router/index'
 
 // URL and endpoint constants
-const API_URL = 'http://beauty-matrix.ru/admin/api_v1/'
+const API_URL = 'http://beauty-matrix.ru/'
 const LOGIN_URL = API_URL + 'logins'
 
 export default {

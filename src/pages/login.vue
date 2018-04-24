@@ -39,7 +39,10 @@
     methods: {
       signin() {
         console.log(this.username + ' - ' + this.password)
-        auth.login(this,{username: this.username, password: this.password})
+        const result = auth.login(this,{username: this.username, password: this.password})
+        if (result) {
+          this.opened = false
+        }
       }
     }
   }
