@@ -21,26 +21,26 @@
           </a>
 
           <a href="#view-train" class="tab-link">
-            <i class="icon f7-icons ios-only">film</i>
-            <i class="icon material-icons md-only">film</i>
+            <!--<i class="icon f7-icons ios-only">film</i>-->
+            <i class="f7-icons">film</i>
             <span class="tabbar-label">Тренировки</span>
           </a>
 
           <a href="#view-progress" class="tab-link">
-            <i class="icon f7-icons ios-only">data</i>
-            <i class="icon material-icons md-only">data</i>
+            <!--<i class="icon f7-icons ios-only">data</i>-->
+            <i class="f7-icons">data</i>
             <span class="tabbar-label">Прогресс</span>
           </a>
 
           <a href="#view-ration" class="tab-link">
-            <i class="icon f7-icons ios-only">list</i>
-            <i class="icon material-icons md-only">view_list</i>
+            <!--<i class="icon f7-icons ios-only">list</i>-->
+            <i class="f7-icons">view_list</i>
             <span class="tabbar-label">Рацион</span>
           </a>
 
           <a href="#view-other" class="tab-link">
-            <i class="icon f7-icons ios-only">more_vertical</i>
-            <i class="icon material-icons md-only">more_vertical</i>
+            <!--<i class="icon f7-icons ios-only">more_vertical</i>-->
+            <i class="f7-icons">more_vertical</i>
             <span class="tabbar-label">Прочее</span>
           </a>
         </div>

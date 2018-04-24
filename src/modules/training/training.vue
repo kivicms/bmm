@@ -1,13 +1,19 @@
 <template>
   <div>
+    <f7-list-item>
+      <f7-label>Неделя</f7-label>
+      <f7-input type="select" placeholder="Пол" name="sex">
+        <option v-for="(w, index) in weeks" v-bind:value="w.id">{{ w.title }}</option>
+      </f7-input>
+    </f7-list-item>
     <div v-show="showSelectedWeek">{{ selectedWeek }}</div>
-    <div class="list links-list" v-show="showWeeks">
+ <!--   <div class="list links-list" v-show="showWeeks">
       <ul>
         <li v-for="w in weeks">
           <a href="#" v-on:click="weekChanged(w.id, w.title)" class="list-button item-link">{{ w.title }} </a>
         </li>
       </ul>
-    </div>
+    </div>-->
   </div>
 </template>
 <script>
