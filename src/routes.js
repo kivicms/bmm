@@ -26,7 +26,7 @@ import Login from './pages/login.vue'
 export default [
   {
     path: '/',
-    component: HomePage,
+    component: HomePage
   },
   {
     path: '/login/',

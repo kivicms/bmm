@@ -19,7 +19,7 @@
     <f7-view id="main-view" url="/" main></f7-view>
 
     <!-- Popup -->
-    <f7-popup id="popup">
+ <!--   <f7-popup id="popup">
       <f7-view>
         <f7-page>
           <f7-navbar title="Popup">
@@ -30,10 +30,11 @@
           <f7-block>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, architecto. Cupiditate laudantium rem nesciunt numquam, ipsam. Voluptates omnis, a inventore atque ratione aliquam. Omnis iusto nemo quos ullam obcaecati, quod.</f7-block>
         </f7-page>
       </f7-view>
-    </f7-popup>
+    </f7-popup>-->
 
+    <login></login>
     <!-- Login Screen -->
-    <f7-login-screen id="login-screen">
+<!--    <f7-login-screen id="login-screen" v-bind:opened="true">
       <f7-view>
         <f7-page login-screen>
           <f7-login-screen-title>Авторизация</f7-login-screen-title>
@@ -55,11 +56,16 @@
           </f7-list>
         </f7-page>
       </f7-view>
-    </f7-login-screen>
+    </f7-login-screen>-->
 
   </div>
 </template>
 
 <script>
-export default {}
+import F7LoginScreen from "../node_modules/framework7-vue/src/components/login-screen.vue";
+import Login from "./pages/login.vue";
+
+export default {components: {
+  Login,
+  F7LoginScreen}}
 </script>

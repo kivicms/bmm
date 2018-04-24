@@ -1,7 +1,6 @@
 <template>
   <f7-page>
     <f7-navbar title="FAQ тренировки" back-link="Back"></f7-navbar>
-    <div class="block-title">FAQ тренировки</div>
     <div class="list accordion-list">
       <ul>
         <li v-for="item in items" class="accordion-item">

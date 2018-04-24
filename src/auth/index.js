@@ -1,9 +1,8 @@
 // import router from '../router/index'
 
 // URL and endpoint constants
-const API_URL = 'http://91.211.124.193:8080/'
-const LOGIN_URL = API_URL + 'login'
-// const SIGNUP_URL = API_URL + 'sign-up'
+const API_URL = 'http://beauty-matrix.ru/admin/api_v1/'
+const LOGIN_URL = API_URL + 'logins'
 
 export default {
 
@@ -11,13 +10,14 @@ export default {
   user: {
     authenticated: false
   },
-  login (context, creds, redirect) {
-    context.Alert('Выполняется проверка', 'info', 'icon-hourglass')
+  login (context, creds) {
+    // context.Alert('Выполняется проверка', 'info', 'icon-hourglass')
     context.$http.post(LOGIN_URL, creds).then(response => {
       if (response.body.error === true) {
-        context.Alert(response.body.errorMessage, 'danger', 'icon-shield')
+        //context.Alert(response.body.errorMessage, 'danger', 'icon-shield')
+        return false
       } else {
-        context.Alert('Выполянется вход в систему', 'success', 'icon-info')
+        // context.Alert('Выполянется вход в систему', 'success', 'icon-info')
         localStorage.setItem('uid', response.body.id)
         localStorage.setItem('username', response.body.username)
         localStorage.setItem('access_token', response.body.access_token)
@@ -25,7 +25,7 @@ export default {
         localStorage.setItem('role', response.body.role)
         localStorage.setItem('profileId', response.body.profileId)
         this.user.authenticated = true
-        window.location = redirect
+        return true
       }
     }, response => {
       console.log('error')
@@ -47,10 +47,10 @@ export default {
     var jwt = localStorage.getItem('access_token')
     if (jwt) {
       this.user.authenticated = true
-      // return true
+      return true
     } else {
       this.user.authenticated = false
-      //  return false
+      return false
     }
   },
   getAvatar () {

@@ -49,18 +49,20 @@ new Vue({
     // App routes
     routes: Routes,
   },
-  methods: {
+/*  methods: {
     onF7RouteChange(newRoute, previousRoute, router) {
-      if (!auth.checkAuth() && newRoute.url !== '/login/') {
-        // console.log('not auth')
+      if (!auth.checkAuth() && newRoute.path !== '/login/') {
+        console.log(newRoute.path)
+        console.log('not auth')
         // router.navigate('/login/')
-        // var loginScreen = this.app.loginScreen.create({ /* parameters */ })
-        // loginScreen.open()
+        //var loginScreen = this.app.loginScreen.create({ /!* parameters *!/ })
+        //loginScreen.open()
+        console.log(this)
       }
-      // console.log('newRoute')
+
       // console.log(newRoute)
     }
-  },
+  },*/
   // Register App Component
   components: {
     app: App

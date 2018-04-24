@@ -1,5 +1,5 @@
 <template>
-  <f7-page>
+  <div class="page">
     <f7-navbar>
       <f7-nav-left>
         <f7-link icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="left"></f7-link>
@@ -46,11 +46,11 @@
         </div>
       </div>
 
-      <div id="view-home" class="view view-main tab tab-active pasge-content" style="padding-top: 24px;">
+      <div id="view-home" class="view view-main tab tab-active page-content">
         <!-- Page, data-name contains page name which can be used in page callbacks -->
 
       </div>
-      <div id="view-train" class="view tab page-content" style="padding-top: 24px;">
+      <div id="view-train" class="view tab page-content">
         <training></training>
       </div>
 
@@ -59,13 +59,13 @@
         <user-progress></user-progress>
       </div>
 
-      <div id="view-ration" class="view tab page-content" style="padding-top: 24px;">
+      <div id="view-ration" class="view tab page-content">
         <!-- Catalog page will be loaded here dynamically from /catalog/ route -->
         <ration></ration>
       </div>
 
       <!-- Other View -->
-      <div id="view-other" class="view tab page-content"  style="padding-top: 24px;">
+      <div id="view-other" class="view tab page-content">
         <div class="list links-list">
           <ul>
             <li><a href="/specialoffer/">Спец. предложения</a></li>
@@ -118,7 +118,7 @@
         <f7-list-item link="/dynamic-route/blog/45/post/125/?foo=bar#about" title="Dynamic Route"></f7-list-item>
         <f7-list-item link="/load-something-that-doesnt-exist/" title="Default Route (404)"></f7-list-item>
       </f7-list>-->
-  </f7-page>
+  </div>
 </template>
 <script>
   import Ration from "../modules/ration/ration.vue";
